@@ -2,7 +2,19 @@
 Train application
 
 #### Structure
-Explanation for the Models here...
+A list of all the models this application uses:
+
+##### User
+...
+
+##### Station
+...
+
+##### Train
+...
+
+##### Carriage
+...
 
 #### Instructions
 To start the application follow these steps:<br>
