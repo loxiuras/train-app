@@ -12,10 +12,13 @@ class CarriageSeeder extends Seeder
     public function run(): void
     {
         for ($i = 0; $i < $this->amountOfCarriages; $i++) {
+            $classTypeIndex = rand(1, 3);
+
             Carriage::updateOrCreate([
                 'number' => rand(100000000, 999999999),
             ],
             [
+                'class_type' => $classTypeIndex === 1 ? Carriage::CLASS_TYPE_FIRST : ($classTypeIndex === 2 ? Carriage::CLASS_TYPE_SECOND : Carriage::CLASS_TYPE_mixed),
                 'seats' => rand(10, 25),
             ]);
         }
