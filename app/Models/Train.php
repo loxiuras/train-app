@@ -23,7 +23,5 @@ class Train extends Model
 
     protected $hidden = [];
 
-    protected $casts = [
-        'seats' => 'integer',
-    ];
+    protected $casts = [];
 }
