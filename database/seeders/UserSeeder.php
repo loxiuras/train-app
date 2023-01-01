@@ -10,6 +10,8 @@ class UserSeeder extends Seeder
 {
     private string $password = 'Password123!';
 
+    private int $amountOfMachinists = 5;
+    private int $amountOfConductors = 15;
     private int $amountOfCustomers = 100;
 
     public function run(): void
@@ -26,7 +28,7 @@ class UserSeeder extends Seeder
 
         // Machinist
         User::factory()
-            ->count(5)
+            ->count($this->amountOfMachinists)
             ->create([
                 'type' => User::USER_TYPE_MACHINIST,
                 'staff_number' => 'M' . rand(100000000, 999999999),
@@ -34,7 +36,7 @@ class UserSeeder extends Seeder
 
         // Conductor
         User::factory()
-            ->count(15)
+            ->count($this->amountOfConductors)
             ->create([
                 'type' => User::USER_TYPE_CONDUCTOR,
                 'staff_number' => 'C' . rand(100000000, 999999999),
@@ -45,7 +47,7 @@ class UserSeeder extends Seeder
             ->count($this->amountOfCustomers)
             ->create([
                 'type' => User::USER_TYPE_CUSTOMER,
-                'customer_number' => 'C' . rand(100000000, 999999999),
+                'customer_number' => 'U' . rand(100000000, 999999999),
             ]);
     }
 }
