@@ -16,5 +16,7 @@ class Carriage extends Model
 
     protected $hidden = [];
 
-    protected $casts = [];
+    protected $casts = [
+        'seats' => 'integer',
+    ];
 }
