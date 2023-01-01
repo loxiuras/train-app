@@ -11,7 +11,7 @@ class Carriage extends Model
 
     public const CLASS_TYPE_FIRST = 'first';
     public const CLASS_TYPE_SECOND = 'second';
-    public const CLASS_TYPE_mixed = 'mixed';
+    public const CLASS_TYPE_MIXED = 'mixed';
 
     protected $fillable = [
         'number',

@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('carriages', function (Blueprint $table) {
             $table->id();
             $table->string('number')->unique();
-            $table->string('class_type')->default(Carriage::CLASS_TYPE_mixed);
+            $table->string('class_type')->nullable();
             $table->integer('seats')->default(0);
             $table->timestamps();
         });
