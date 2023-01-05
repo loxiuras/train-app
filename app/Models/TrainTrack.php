@@ -6,25 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Station extends Model
+class TrainTrack extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'number',
         'name',
-        'street',
-        'house_number',
-        'house_number_extra',
-        'postal_code',
-        'city',
-        'country',
     ];
 
     protected $hidden = [];
 
-    protected $casts = [
-        'seats' => 'integer',
-    ];
+    protected $casts = [];
 
     ##### RELATIONS #####
 
