@@ -2,7 +2,9 @@
 Train application
 
 #### Structure
-A list of all the models this application uses:
+A list of all the models this application uses.
+<br>Run ``$ php artisan display:model-structure`` to preview some model data of the models below.
+<br><small><i>Note: Missing models will be added soon.</i></small>
 
 ##### User
 ...
