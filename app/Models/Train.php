@@ -10,6 +10,7 @@ class Train extends Model
     use HasFactory;
 
     public const FUEL_TYPE_ELECTRIC = 'electric';
+
     public const FUEL_TYPE_DIESEL = 'diesel';
 
     protected $fillable = [

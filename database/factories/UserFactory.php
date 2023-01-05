@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,7 +18,7 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'date_of_birth' => now()->subYears(rand(15, 50)),
             'street' => fake()->streetName,
-            'house_number' => (int)rand(1, 200),
+            'house_number' => (int) rand(1, 200),
             'house_number_extra' => $this->generateHouseNumberExtra(),
             'postal_code' => fake()->postcode,
             'city' => fake()->city,
@@ -32,13 +31,15 @@ class UserFactory extends Factory
     {
         $rand = rand(0, 4);
 
-        if (empty($rand)) return null;
+        if (empty($rand)) {
+            return null;
+        }
 
         return match ($rand) {
-            1 => "A",
-            2 => "B",
-            3 => "C",
-            default => "D",
+            1 => 'A',
+            2 => 'B',
+            3 => 'C',
+            default => 'D',
         };
     }
 }

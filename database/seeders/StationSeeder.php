@@ -13,8 +13,7 @@ class StationSeeder extends Seeder
             'name' => 'Station Ede-Wageningen',
             'city' => 'Ede',
             'country' => 'Nederland',
-        ],
-        [
+        ], [
             'street' => 'Stationsweg',
             'postal_code' => '6717 LV',
         ]);
@@ -23,8 +22,7 @@ class StationSeeder extends Seeder
             'name' => 'Station Hemmen-Dodewaard',
             'city' => 'Dodewaard',
             'country' => 'Nederland',
-        ],
-        [
+        ], [
             'street' => 'Boelenhamsestraat',
             'postal_code' => '6669 MN',
         ]);
@@ -33,8 +31,7 @@ class StationSeeder extends Seeder
             'name' => 'Station Arnhem Centraal',
             'city' => 'Arnhem',
             'country' => 'Nederland',
-        ],
-        [
+        ], [
             'street' => 'Nieuwe Stationsstraat',
             'postal_code' => '6811 MA',
         ]);
@@ -43,8 +40,7 @@ class StationSeeder extends Seeder
             'name' => 'Köln Hauptbahnhof',
             'city' => 'Köln',
             'country' => 'Duitsland',
-        ],
-        [
+        ], [
             'street' => 'Trankgasse',
             'house_number' => '11',
             'postal_code' => '50667',

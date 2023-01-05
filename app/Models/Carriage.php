@@ -10,7 +10,9 @@ class Carriage extends Model
     use HasFactory;
 
     public const CLASS_TYPE_FIRST = 'first';
+
     public const CLASS_TYPE_SECOND = 'second';
+
     public const CLASS_TYPE_MIXED = 'mixed';
 
     protected $fillable = [

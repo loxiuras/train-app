@@ -12,7 +12,9 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     public const USER_TYPE_CONDUCTOR = 'conductor';
+
     public const USER_TYPE_MACHINIST = 'machinist';
+
     public const USER_TYPE_CUSTOMER = 'customer';
 
     protected $fillable = [

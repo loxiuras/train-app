@@ -17,8 +17,7 @@ class CarriageSeeder extends Seeder
 
             Carriage::updateOrCreate([
                 'number' => rand(100000000, 999999999),
-            ],
-            [
+            ], [
                 'class_type' => $classTypeIndex === 1 ? Carriage::CLASS_TYPE_FIRST : ($classTypeIndex === 2 ? Carriage::CLASS_TYPE_SECOND : Carriage::CLASS_TYPE_MIXED),
                 'seats' => rand(10, 25),
             ]);

@@ -21,10 +21,12 @@ class TrainTrackSeeder extends Seeder
 
         $trackName = "$startStation->name - $endStation->name";
         $amountOfStations = strlen($trackName) / 5;
-        if ($amountOfStations <= 3) $amountOfStations = 5;
+        if ($amountOfStations <= 3) {
+            $amountOfStations = 5;
+        }
 
         $trainTrack = TrainTrack::updateOrCreate([
-            'number' => md5($startStation->name . $endStation->name),
+            'number' => md5($startStation->name.$endStation->name),
         ], [
             'name' => "Track _ $trackName",
         ]);

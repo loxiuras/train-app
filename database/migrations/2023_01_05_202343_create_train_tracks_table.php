@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('train_tracks', function (Blueprint $table) {
+        Schema::create('train_tracks', function (Blueprint $table): void {
             $table->id();
             $table->string('number')->unique();
             $table->string('name');

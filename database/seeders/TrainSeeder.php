@@ -11,8 +11,7 @@ class TrainSeeder extends Seeder
     {
         Train::updateOrCreate([
             'number' => rand(100000000, 999999999),
-        ],
-        [
+        ], [
             'brand' => 'Lima Express',
             'type' => 'DB E880',
             'drive' => '',
@@ -22,8 +21,7 @@ class TrainSeeder extends Seeder
 
         Train::updateOrCreate([
             'number' => rand(100000000, 999999999),
-        ],
-        [
+        ], [
             'brand' => 'DB Diesellok',
             'type' => 'V60 155',
             'drive' => '',
@@ -33,8 +31,7 @@ class TrainSeeder extends Seeder
 
         Train::updateOrCreate([
             'number' => rand(100000000, 999999999),
-        ],
-        [
+        ], [
             'brand' => 'SBB RBe',
             'type' => '4/4 1435',
             'drive' => '',
