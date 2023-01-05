@@ -24,4 +24,9 @@ To start the application follow these steps:<br>
 
 #### Packages
 <b>IDE-helper</b><br>
-The IDE-helper package (and actions helper) is installed to give you more functionality in your IDE. To create/update the IDE-helper run the following command: ``$ composer ide-helper``
+The IDE-helper package (and actions helper) is installed to give you more functionality in your IDE. 
+To create/update the IDE-helper run the following command: ``$ composer ide-helper``
+
+<b>Laravel Pint</b><br>
+Laravel come default with the Pint linter. Pint checks your code and helps you program in .... way. 
+To run the pint linter your can run the following commands: ``$ composer pint`` (auto fixes the issues) or ``$ composer pint-test`` (shows the issues but doesn't fix them).
