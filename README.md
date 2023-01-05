@@ -17,10 +17,14 @@ A list of all the models this application uses:
 ...
 
 ##### Train track
-...
+A 'Train track' is a track between stations. 
+The seeder defines a start and end station and adds some 'sub' stations in between to create a longer track.
+When a starting station has a different country then the end station, the sub stations are divided in halves.
+The first half is in the starting (station) country and other half in the end (station) country.
+<br><small><i>Note: the seeder does not take into account trajectories that pass through multiple countries. E.g. a trip from the Netherlands to Poland will not have stations in Germany.</i></small>
 
 ##### Train track station
-...
+A 'Train track station' is a station located in a 'Train track'. Most Train tracks have multiple stations. The Stations are ordered by the 'order' key.
 
 #### Instructions
 To start the application follow these steps:<br>
