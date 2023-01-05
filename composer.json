@@ -35,6 +35,8 @@
         }
     },
     "scripts": {
+        "pint": "pint --config pint/config.json",
+        "pint-test": "pint --config pint/config.json --test",
         "ide-helper": [
             "@php artisan cache:clear",
             "@php artisan ide-helper:generate",
