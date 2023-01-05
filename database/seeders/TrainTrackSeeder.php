@@ -10,7 +10,19 @@ class TrainTrackSeeder extends Seeder
 {
     public function run(): void
     {
+        // The Netherlands to The Netherlands;
         $this->createTrainTrack(1, 2);
+        $this->createTrainTrack(1, 3);
+
+        $this->createTrainTrack(2, 1);
+        $this->createTrainTrack(2, 3);
+
+        $this->createTrainTrack(3, 1);
+        $this->createTrainTrack(3, 2);
+
+        // The Netherlands to Germany;
+        $this->createTrainTrack(1, 4);
+        $this->createTrainTrack(2, 4);
         $this->createTrainTrack(3, 4);
     }
 
