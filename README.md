@@ -28,5 +28,5 @@ The IDE-helper package and actions helper are installed to give you more functio
 To create/update the IDE-helper run the following command: ``$ composer ide-helper``
 
 <b>Laravel Pint</b><br>
-Laravel come default with the Pint linter. Pint checks your code and helps you program in .... way. 
+Laravel comes default with the Pint linter. Pint checks your code and helps you program in a structured way. 
 To run the pint linter your can run the following commands: ``$ composer pint`` (auto fixes the issues) or ``$ composer pint-test`` (shows the issues but doesn't fix them).
