@@ -11,11 +11,11 @@ return new class extends Migration
         Schema::create('stations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('street');
+            $table->string('street')->nullable();
             $table->integer('house_number')->nullable();
             $table->string('house_number_extra')->nullable();
-            $table->string('postal_code');
-            $table->string('city');
+            $table->string('postal_code')->nullable();
+            $table->string('city')->nullable();
             $table->string('country');
             $table->timestamps();
         });
