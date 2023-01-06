@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Carriage;
 use App\Models\Train;
+use App\Models\TrainTrack;
 use App\Models\User;
 use Illuminate\Console\Command;
 
@@ -18,6 +19,7 @@ class DisplayModelStructure extends Command
         $this->displayUsers();
         $this->displayTrains();
         $this->displayCarriages();
+        $this->displayTrainTracks();
     }
 
     private function displayUsers(): void
@@ -89,6 +91,36 @@ class DisplayModelStructure extends Command
                 ];
             }
             $items[] = ['...'];
+
+            $this->table($headers, $items);
+        }
+    }
+
+    private function displayTrainTracks(): void
+    {
+        $trainTracks = TrainTrack::all();
+
+        if ($trainTracks) {
+            $this->components->info('Train track model');
+
+            $headers = ['Number', 'Name', 'Start station', 'End station', 'Amount of substations'];
+
+            $items = [];
+            foreach ($trainTracks as $trainTrack) {
+                $startTrackStation = $trainTrack->trainTracks()->first();
+                $endTrackStation = $trainTrack->trainTracks()->orderBy('order', 'desc')->first();
+
+                $items[] = [
+                    $trainTrack->number,
+                    str_replace('Track _', '', $trainTrack->name),
+                    $startTrackStation->station->name,
+                    $endTrackStation->station->name,
+                    $trainTrack->trainTracks()
+                        ->where('id', '!=', $startTrackStation->id)
+                        ->where('id', '!=', $endTrackStation->id)
+                        ->count(),
+                ];
+            }
 
             $this->table($headers, $items);
         }
