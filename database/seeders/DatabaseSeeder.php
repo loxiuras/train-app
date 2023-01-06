@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             TrainSeeder::class,
             CarriageSeeder::class,
             TrainTrackSeeder::class,
+            TrainRideSeeder::class,
         ]);
     }
 }
