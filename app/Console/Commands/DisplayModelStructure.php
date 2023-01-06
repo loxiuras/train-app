@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Carriage;
 use App\Models\Train;
+use App\Models\TrainRide;
 use App\Models\TrainTrack;
 use App\Models\User;
 use Illuminate\Console\Command;
@@ -20,6 +21,7 @@ class DisplayModelStructure extends Command
         $this->displayTrains();
         $this->displayCarriages();
         $this->displayTrainTracks();
+        $this->displayTrainRides();
     }
 
     private function displayUsers(): void
@@ -107,19 +109,62 @@ class DisplayModelStructure extends Command
 
             $items = [];
             foreach ($trainTracks as $trainTrack) {
-                $startTrackStation = $trainTrack->trainTracks()->first();
-                $endTrackStation = $trainTrack->trainTracks()->orderBy('order', 'desc')->first();
+                $startTrackStation = $trainTrack->trainTrackStations()->first();
+                $endTrackStation = $trainTrack->trainTrackStations()->orderBy('order', 'desc')->first();
 
                 $items[] = [
                     $trainTrack->number,
                     str_replace('Track _', '', $trainTrack->name),
                     $startTrackStation->station->name,
                     $endTrackStation->station->name,
-                    $trainTrack->trainTracks()
+                    $trainTrack->trainTrackStations()
                         ->where('id', '!=', $startTrackStation->id)
                         ->where('id', '!=', $endTrackStation->id)
                         ->count(),
                 ];
+            }
+
+            $this->table($headers, $items);
+        }
+    }
+
+    private function displayTrainRides(): void
+    {
+        $trainRides = TrainRide::all();
+
+        if ($trainRides) {
+            $this->components->info('Train ride model');
+
+            $headers = ['Number', 'Direction', 'Time', 'Train', 'Carriage'];
+
+            $items = [];
+            foreach ($trainRides as $trainRide) {
+                $items[] = [
+                    $trainRide->number,
+                    $trainRide->direction,
+                    $trainRide->start_at->format('d M Y') . " - " . $trainRide->end_at->format('d M Y'),
+                ];
+
+                $train = $trainRide->train;
+                $items[] = [
+                    $train->number,
+                    '',
+                    '',
+                    "$train->brand $train->type",
+                ];
+
+                $trainRideCarriages = $trainRide->carriages;
+                foreach ($trainRideCarriages as $trainRideCarriage) {
+                    $carriage = $trainRideCarriage->carriage;
+
+                    $items[] = [
+                        $carriage->number,
+                        '',
+                        '',
+                        '',
+                        $carriage->class_type . ($carriage->seats > 0 ? " ($carriage->seats seats available)" : ''),
+                    ];
+                }
             }
 
             $this->table($headers, $items);
