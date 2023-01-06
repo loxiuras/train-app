@@ -21,7 +21,7 @@ class TrainTrack extends Model
 
     ##### RELATIONS #####
 
-    public function trainTracks(): hasMany
+    public function trainTrackStations(): hasMany
     {
         return $this->hasMany(TrainTrackStation::class);
     }
