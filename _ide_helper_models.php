@@ -39,14 +39,16 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $name
- * @property string $street
+ * @property string|null $street
  * @property int|null $house_number
  * @property string|null $house_number_extra
- * @property string $postal_code
- * @property string $city
+ * @property string|null $postal_code
+ * @property string|null $city
  * @property string $country
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\TrainTrackStation[] $trainTracks
+ * @property-read int|null $train_tracks_count
  * @method static \Illuminate\Database\Eloquent\Builder|Station newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Station newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Station query()
@@ -95,6 +97,33 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\TrainRide
+ *
+ * @property int $id
+ * @property string $number
+ * @property int $train_track_id
+ * @property string $direction
+ * @property int $train_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Train $train
+ * @property-read \App\Models\TrainTrack $trainTrack
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide query()
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide whereDirection($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide whereNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide whereTrainId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide whereTrainTrackId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TrainRide whereUpdatedAt($value)
+ */
+	class TrainRide extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\TrainTrack
  *
  * @property int $id
@@ -102,6 +131,8 @@ namespace App\Models{
  * @property string $name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\TrainTrackStation[] $trainTrackStations
+ * @property-read int|null $train_track_stations_count
  * @method static \Illuminate\Database\Eloquent\Builder|TrainTrack newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TrainTrack newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TrainTrack query()
