@@ -38,12 +38,12 @@ class TrainTrackSeeder extends Seeder
         }
 
         $trainTrack = TrainTrack::updateOrCreate([
-            'number' => md5($startStation->name.$endStation->name),
+            'number' => rand(100000000, 999999999),
         ], [
             'name' => "Track _ $trackName",
         ]);
 
-        $trainTrack->trainTracks()->updateOrCreate(['station_id' => $startStationId], ['order' => 0]);
+        $trainTrack->trainTrackStations()->updateOrCreate(['station_id' => $startStationId], ['order' => 0]);
 
         for ($i = 1; $i < ($amountOfStations + 1); $i++) {
             $station = Station::updateOrCreate([
@@ -57,10 +57,10 @@ class TrainTrackSeeder extends Seeder
                 ),
             ]);
 
-            $trainTrack->trainTracks()->updateOrCreate(['station_id' => $station->id], ['order' => $i]);
+            $trainTrack->trainTrackStations()->updateOrCreate(['station_id' => $station->id], ['order' => $i]);
         }
 
-        $trainTrack->trainTracks()->updateOrCreate(['station_id' => $endStationId], ['order' => $amountOfStations + 1]);
+        $trainTrack->trainTrackStations()->updateOrCreate(['station_id' => $endStationId], ['order' => $amountOfStations + 1]);
     }
 
     private function getCountryBasedOnStartAndEndStationsAndAmount(Station $startStation, Station $endStation, int $amountOfSubStations, int $currentStation): string
