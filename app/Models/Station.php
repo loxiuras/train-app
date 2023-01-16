@@ -18,6 +18,8 @@ class Station extends Model
         'postal_code',
         'city',
         'country',
+        'long',
+        'lat',
     ];
 
     protected $hidden = [];
