@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('train_rides', function (Blueprint $table) {
+        Schema::create('train_rides', function (Blueprint $table): void {
             $table->id();
             $table->string('number');
             $table->foreignId('train_track_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();

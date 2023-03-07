@@ -6,7 +6,6 @@ use App\Models\Station;
 use App\Models\TrainTrack;
 use App\Models\TrainTrackStation;
 use Illuminate\Console\Command;
-use Illuminate\Support\Collection;
 
 class SeedRealTrainTracks extends Command
 {
@@ -15,25 +14,25 @@ class SeedRealTrainTracks extends Command
     protected $description = '';
 
     private array $trainRides = [
-      [
-          'start_station' => [
-              'name' => 'Station Ede-Wageningen',
-              'long' => '52.027995',
-              'lat' => '5.6710488',
-              'city' => 'Ede',
-              'country' => 'Nederland',
-              'postal_code' => '6717 LV',
-          ],
-          'sub_stations' => 3,
-          'end_station' => [
-              'name' => 'Station Amsterdam Centraal',
-              'long' => '52.3674418',
-              'lat' => '4.8801153',
-              'city' => 'Amsterdam',
-              'country' => 'Nederland',
-              'postal_code' => '1012 AB',
-          ],
-      ]
+        [
+            'start_station' => [
+                'name' => 'Station Ede-Wageningen',
+                'long' => '52.027995',
+                'lat' => '5.6710488',
+                'city' => 'Ede',
+                'country' => 'Nederland',
+                'postal_code' => '6717 LV',
+            ],
+            'sub_stations' => 3,
+            'end_station' => [
+                'name' => 'Station Amsterdam Centraal',
+                'long' => '52.3674418',
+                'lat' => '4.8801153',
+                'city' => 'Amsterdam',
+                'country' => 'Nederland',
+                'postal_code' => '1012 AB',
+            ],
+        ],
     ];
 
     public function handle(): void

@@ -60,7 +60,7 @@ class DisplayModelStructure extends Command
             foreach ($trains as $train) {
                 $items[] = [
                     $train->number,
-                    $train->brand . ' ' . $train->type,
+                    $train->brand.' '.$train->type,
                     $train->drive ?? '-',
                     $train->fuel_type ?? '-',
                 ];
@@ -142,7 +142,7 @@ class DisplayModelStructure extends Command
                 $items[] = [
                     $trainRide->number,
                     $trainRide->direction,
-                    $trainRide->start_at->format('d M Y') . " - " . $trainRide->end_at->format('d M Y'),
+                    $trainRide->start_at->format('d M Y').' - '.$trainRide->end_at->format('d M Y'),
                 ];
 
                 $train = $trainRide->train;
@@ -162,7 +162,7 @@ class DisplayModelStructure extends Command
                         '',
                         '',
                         '',
-                        $carriage->class_type . ($carriage->seats > 0 ? " ($carriage->seats seats available)" : ''),
+                        $carriage->class_type.($carriage->seats > 0 ? " ($carriage->seats seats available)" : ''),
                     ];
                 }
             }

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Train;
 use App\Models\TrainRide;
 use App\Models\TrainTrack;
 use Illuminate\Database\Seeder;
@@ -13,9 +12,9 @@ class TrainRideSeeder extends Seeder
 
     public function run(): void
     {
-        $this->createTrainRide(1, 1, [1,2,3,4,5]);
-        $this->createTrainRide(2, 2, [6,7,8,9,10]);
-        $this->createTrainRide(3, 3, [36,37,38,39,40]);
+        $this->createTrainRide(1, 1, [1, 2, 3, 4, 5]);
+        $this->createTrainRide(2, 2, [6, 7, 8, 9, 10]);
+        $this->createTrainRide(3, 3, [36, 37, 38, 39, 40]);
     }
 
     private function createTrainRide(int $trainId, int $trainTrackId, array $carriageIds = null): void
